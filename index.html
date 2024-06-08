@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect Page</title>
+    <!-- Link to external CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .ss {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Redirecting...</h1>
+        <p>You will be redirected to the new page in <span id="countdown"><span class="ss">60</span></span> seconds.</p>
+        <p>If you are not redirected automatically, follow this <a href="https://doan88.vercel.app/#">link</a>.</p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var countdownElement = document.querySelector("#countdown .ss");
+            var countdown = 60;
+
+            var interval = setInterval(function () {
+                countdown--;
+                countdownElement.textContent = countdown;
+                if (countdown <= 0) {
+                    clearInterval(interval);
+                    window.location.href = "https://doan88.vercel.app/#";
+                }
+            }, 1000);
+        });
+
+    </script>
+</body>
+
+</html>
